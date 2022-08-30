@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Product preview card component</title>
+<style>
+body { height: 100%; }
+@media screen and (min-width: 375px) { 
+#BigContainer 
+{ position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); border-radius: 10px; border: 2px solid black; text-align: center; width: 375px; }
+img { border-radius: 10px 10px 0px 0px; height: 100%; }
+}
+@media screen and (min-width: 800px) { 
+#BigContainer
+{ position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); border-radius: 10px; border: 2px solid black; text-align: center; width: 800px; display: flex; }
+img { border-radius: 10px 0px 0px 10px; height: 100%; }
+}
+#name { font-weight: bold; }
+.attribution { position: absolute; bottom: 0; left: 10px; font-size: 11px; }
+.attribution a { color: hsl(228, 45%, 44%); }
+</style>
+</head>
+<body>
+<div id="BigContainer">
+    <div id="img">
+        <picture id="image">
+        <source media="(min-width: 375px)" srcset="https://i.im.ge/2022/08/30/Oy8wIT.image-product-mobile.jpg" width="375px">
+        <source media="(min-width: 800px)" srcset="https://i.im.ge/2022/08/29/OPQwNy.image-product-desktop.jpg">
+        <img alt="screen is small">
+        </picture>
+    </div>
+    <div id="text">
+         <div id="category">P E R F U M E</div>
+         <div id="name">Gabrielle Essence Eau De Parfum</div>
+         <p id="desc">A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL.</p>
+         <div id="new price">$149.99</div>
+         <div id="old price">$169.99</div>
+         <div id="button">Add to Cart</div>
+    </div>
+</div>
+<div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Tony George</a>.
+</div>
+</body>
+</html>
