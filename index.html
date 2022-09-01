@@ -1,49 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Product preview card component</title>
-<style>
-body { height: 100%; }
-@media screen and (min-width: 375px) { 
-#BigContainer 
-{ position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); border-radius: 10px; border: 2px solid black; text-align: center; width: 375px; }
-img { border-radius: 10px 10px 0px 0px; height: 100%; }
-}
-@media screen and (min-width: 800px) { 
-#BigContainer
-{ position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); border-radius: 10px; border: 2px solid black; text-align: center; width: 800px; display: flex; }
-img { border-radius: 10px 0px 0px 10px; height: 100%; }
-}
-#name { font-weight: bold; }
-.attribution { position: absolute; bottom: 0; left: 10px; font-size: 11px; }
-.attribution a { color: hsl(228, 45%, 44%); }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fraunces|Montserrat">
+    <title>Frontend Mentor | Product preview card component</title>
+    <style>
+        body,
+        html {
+            background: hsl(30, 38%, 92%);
+            min-height: 100%;
+        }
+
+        @media screen and (min-width: 375px) {
+            #BigContainer {
+                background: hsl(0, 0%, 100%);
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 10px;
+                width: 375px;
+            }
+
+            img {
+                border-radius: 10px 10px 0px 0px;
+                width: 375px;
+            }
+        }
+
+        @media (max-height: 600px) {
+            body {
+                height: 700px;
+            }
+
+            #BigContainer {
+                margin-top: 200px;
+                height: 650px;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            #BigContainer {
+                background: hsl(0, 0%, 100%);
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 10px;
+                width: 600px;
+                height: 450px;
+                display: flex;
+            }
+
+            img {
+                border-radius: 10px 0px 0px 10px;
+                height: 450px;
+                width: 300px;
+            }
+        }
+
+        #text {
+            padding: 30px;
+        }
+
+        #category,
+        #oldPrice,
+        #desc {
+            font-weight: 700;
+            font-family: Montserrat;
+            color: rgb(127, 127, 127);
+        }
+
+        #name,
+        #newPrice {
+            font-size: 35px;
+            font-family: Fraunces;
+            font-weight: 900;
+        }
+
+        #newPrice {
+            color: hsl(158, 36%, 37%);
+        }
+
+        #oldPrice {
+            padding: 13px;
+            padding-left: 20px;
+        }
+
+        #price {
+            display: flex;
+        }
+
+        button {
+            background: hsl(158, 36%, 37%);
+            border-radius: 10px;
+            width: 100%;
+            height: 50px;
+            border: none;
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            font-family: Montserrat;
+        }
+
+        button:hover {
+            cursor: pointer;
+            background-color: rgb(39, 82, 60);
+        }
+
+        .attribution {
+            position: fixed;
+            bottom: 0;
+            left: 10px;
+            font-size: 11px;
+        }
+
+        .attribution a {
+            color: hsl(228, 45%, 44%);
+        }
+    </style>
 </head>
+
 <body>
-<div id="BigContainer">
-    <div id="img">
-        <picture id="image">
-        <source media="(min-width: 375px)" srcset="https://i.im.ge/2022/08/30/Oy8wIT.image-product-mobile.jpg" width="375px">
-        <source media="(min-width: 800px)" srcset="https://i.im.ge/2022/08/29/OPQwNy.image-product-desktop.jpg">
-        <img alt="screen is small">
-        </picture>
+    <div id="BigContainer">
+        <div>
+            <picture id="img">
+                <source media="(min-width: 1200px)" srcset="https://i.ibb.co/fSkjJVT/image-product-desktop.jpg">
+                <source media="(min-width: 187.5px)"
+                    srcset="https://i.im.ge/2022/08/30/Oy8wIT.image-product-mobile.jpg">
+                <img>
+            </picture>
+        </div>
+        <div id="text">
+            <div id="category">P E R F U M E</div><br>
+            <div id="name">Gabrielle Essence Eau De Parfum</div>
+            <p id="desc">A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for
+                the House of CHANEL.</p>
+            <div id="price">
+                <div id="newPrice">$149.99</div>
+                <div id="oldPrice"><del>$169.99</del></div>
+            </div>
+            <button role="button">Add to cart</button>
+        </div>
     </div>
-    <div id="text">
-         <div id="category">P E R F U M E</div>
-         <div id="name">Gabrielle Essence Eau De Parfum</div>
-         <p id="desc">A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL.</p>
-         <div id="new price">$149.99</div>
-         <div id="old price">$169.99</div>
-         <div id="button">Add to Cart</div>
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">Tony George</a>.
     </div>
-</div>
-<div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Tony George</a>.
-</div>
 </body>
+
 </html>
